@@ -1,6 +1,8 @@
 import java.util.Scanner;
+import java.util.Locale;
 void main() {
     Scanner scan = new Scanner(System.in);
+    scan.useLocale(Locale.US);
     Boolean calc = true;
     //Calculadora simples
     do{
