@@ -4,11 +4,14 @@ import java.util.Random;
 Random random = new Random();
 Scanner scan = new Scanner(System.in);
 boolean jogar = true;
-
+int numPartidas = 0, numVitorias = 0;
 
 void main() {
     do{
         boolean fimpartida = false;
+
+        //Variáveis de placar
+
 
         //Sorteio navios
         //Navio 1
@@ -49,6 +52,7 @@ void main() {
                 {"13", "14", "15", "16"}
         };
 
+
         do{
             System.out.println("-+-+-+-+-+ Batalha Naval +-+-+-+-+");
             //Mostrar tela
@@ -63,9 +67,13 @@ void main() {
             if (!fimpartida){
                 //Verificação de bombas
                 fimpartida = explosao(mar, bomb1, bomb2, bomb3);
+            } else {
+                numVitorias++;
             }
 
         }while(!fimpartida);
+        numPartidas++;
+        placar(numPartidas, numVitorias);
 
         telaContinuidade();
 
@@ -237,4 +245,14 @@ boolean explosao (String [][] mar, int [] b1, int [] b2, int [] b3){
     return resp;
 }
 
+void placar(int numPartidas, int numVitorias){
+    System.out.println("\n========================");
+    System.out.println("        Placar          ");
+    System.out.println("========================");
+    System.out.println("Número de partidas: " + numPartidas);
+    System.out.println("Vitórias: " + numVitorias);
+    int derrotas = numPartidas - numVitorias;
+    System.out.println("Derrotas: " + derrotas);
+    System.out.println("========================\n");
+}
 
