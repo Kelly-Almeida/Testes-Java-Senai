@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Locale;
-public class Corpo{
+class Aula5_1{
     public void main() {
         Scanner scan = new Scanner(System.in);
         String [] nomes = new String[5];

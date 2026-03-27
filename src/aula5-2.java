@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class aula5 {
+class aula5 {
     public static void main (String[] args){
         Scanner scan = new Scanner(System.in);
         int[] nums = new int[10];

@@ -1,4 +1,4 @@
-public class aula5e01 {
+class aula5e01 {
     public static void main(String[] args) {
         String[] cores = new String[]{"Azul", "Vermelho", "Preto", "Laranja", "Verde"};
         System.out.println("A primeira cor é " + cores[0]);
