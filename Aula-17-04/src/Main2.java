@@ -53,7 +53,6 @@ public class Main2 extends JFrame {
         add(painelFormulario, BorderLayout.NORTH);
 
         //Área central onde será exibido os dados
-
         areaExibicao = new JTextArea();
         areaExibicao.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(areaExibicao);
@@ -78,9 +77,76 @@ public class Main2 extends JFrame {
 
         btnLer.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {lerdados();}
+            public void actionPerformed(ActionEvent e) {lerDados();}
         });
-
-
     }
+
+    // Metodo que contém a lógica de escrita no arquivo
+    private void salvarDados(){
+        String filme = txtFilme.getText();
+        String genero = txtGenero.getText();
+        String valor = txtValor.getText();
+
+        if(filme.isEmpty() || genero.isEmpty() || valor.isEmpty()){
+            JOptionPane.showMessageDialog(this,  "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        boolean isText = rbTxt.isSelected();
+        String nomeArquivo = isText ? "locadora.txt" : "locadora.csv";
+        String linhaParaSalvar = "";
+
+        //Formata a string dependendo da escolha do usuário
+        if (isText){
+            linhaParaSalvar = String.format("Filme: %s | Gênero: %s | Valor: R$ %s\n", filme, genero, valor);
+        } else{
+            linhaParaSalvar = String.format("%s;%s;%s\n", filme, genero, valor);
+        }
+
+        //true no fileWriter faz o "append" (adiciona no final sem apagar o que já tem)
+        try(BufferedWriter escritor = new BufferedWriter(new FileWriter(nomeArquivo, true))){
+
+            //Se for CSV e o arquivo estiver vazio, podemos adicionar o cabeçalho
+            File arquivo = new File(nomeArquivo);
+            if(!isText && arquivo.length() == 0){escritor.write("Filme;Genero;Valor\n");}
+
+            escritor.write(linhaParaSalvar);
+            JOptionPane.showMessageDialog(this, "Filme salvo com sucesso em " + nomeArquivo);
+
+            //Limpa os campos após salvar
+            txtFilme.setText("");
+            txtGenero.setText("");
+            txtValor.setText("");
+            txtFilme.requestFocus();
+        } catch(IOException e){
+            JOptionPane.showMessageDialog(this, "Erro ao Salvar" + e.getMessage());
+        }
+    }
+
+    //Metodo que contém a lógica de leitur do arquivo
+    private void lerDados(){
+        boolean isTxt = rbTxt.isSelected();
+        String nomeArquivo = isTxt ? "locadora.txt" : "locadora.csv";
+
+        File arquivo = new File(nomeArquivo);
+        if(!arquivo.exists()){
+            JOptionPane.showMessageDialog(this, "O arquivo " + nomeArquivo + " ainda não ");
+            return;
+        }
+
+        //Limpa a tela antes de mostrar os novos dados
+        areaExibicao.setText("");
+
+        try (BufferedReader leitor = new BufferedReader(new FileReader(nomeArquivo))){
+            String linha;
+            while((linha = leitor.readLine()) != null){
+                areaExibicao.append(linha + "\n"); //Joga a linha na tela
+            }
+        }catch (IOException ex){
+            JOptionPane.showMessageDialog(this, "Erro ao ler o arquivo: " + ex.getMessage());
+        }
+    }
+
+    //Metodo principal para rodar a tela
+    public static void main(String[] args){ new Main2().setVisible(true);}
 }
