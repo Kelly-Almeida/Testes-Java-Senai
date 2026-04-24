@@ -1,28 +1,36 @@
 import java.util.Scanner;
 
 public class Teste4 {
-    public void main(String[] args){
+    public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         int quantAlunos;
         int[] notas = new int[4];
         String nome;
 
-        System.out.print("Digite a quantidade de alunos que serão cardastrados: ");
+        System.out.print("Quantidade de alunos para cadastrar: ");
         quantAlunos = scan.nextInt();
 
-        for(int i = 1; i <= quantAlunos; i++){
-            System.out.printf("Digite o nome do %d°: ");
+        Aluno[] alunos = new Aluno[quantAlunos];
+        int[] id = new int[quantAlunos];
+
+        for(int i = 0; i < quantAlunos; i++){
+            System.out.print("Digite o ID do aluno: ");
+            id[i] = scan.nextInt();
+
+            scan.nextLine();
+
+            System.out.print("Digite o nome do aluno: ");
             nome = scan.nextLine();
 
+            System.out.println("Digite as notas abaixo: ");
             for(int l: notas){
-                System.out.printf("Digite a %d° nota: ");
-                notas[i] = scan.nextInt();
+                notas[l] = scan.nextInt();
             }
 
-            Aluno "aluno" + i = new Aluno(nome, notas);
+             alunos[i] = new Aluno(id[i], nome, notas);
             
-            "aluno"+i.mostrarDados();
-            "aluno"+i.media();
+            alunos[i].mostrarDados();
+            alunos[i].mostrarNotas();
         }
         
         
