@@ -1,10 +1,10 @@
 public class Aluno {
     private int id;
     private String nome;
-    private int[] notas;
+    private float[] notas;
 
 
-    public Aluno(int id,String nome, int[] notas) {
+    public Aluno(int id,String nome, float[] notas) {
         this.id = id;
         this.nome = nome;
         this.notas = notas;
@@ -17,12 +17,12 @@ public class Aluno {
     }
 
     public void mostrarNotas(){
-        int soma = 0;
+        float soma = 0;
 
         System.out.println("Notas: ");
-        for(int i:notas){
-            System.out.printf("%d", notas[i]);
-            soma = notas[i];
+        for(int i = 0; i < 4; i++){
+            System.out.printf("%d° - %.1f\n", (i + 1),notas[i]);
+            soma += notas[i];
         }
 
         float media = soma/4;
