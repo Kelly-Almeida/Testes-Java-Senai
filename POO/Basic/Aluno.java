@@ -10,6 +10,10 @@ public class Aluno {
         this.notas = notas;
     }
 
+    public int getId(){
+        return this.id;
+    }
+
     public void mostrarDados(){
         System.out.println("=====================");
         System.out.println("ID: " + id);

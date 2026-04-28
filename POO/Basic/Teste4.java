@@ -47,13 +47,13 @@ public class Teste4 {
         }while(rodar);
     }
 
-    public static void cadastrarAluno(ArrayList <Aluno> alunos){
+    public static void cadastrarAluno(Arrayuno> alunos){
         Scanner scan = new Scanner(System.in);
         float[] notas = new float[4];
         int id;
         String nome;
 
-        System.out.print("\nDigite o ID do aluno: ");
+        System.out.print("\nDigite o ID do alunList <Alo: ");
         id = scan.nextInt();
 
         scan.nextLine();
@@ -69,10 +69,19 @@ public class Teste4 {
     }
 
     public static void buscarAluno(ArrayList <Aluno> alunos){
+        Scanner scan = new Scanner(System.in);
+        
         System.out.println("===================");
         System.out.println("\tBanco de alunos");
         System.out.println("===================");
+        System.out.print("Digite o id do aluno: ");
+        int id = scan.nextInt();
+        
+        for(int i = 0; i < alunos.size(); i ++){
+            if(){
 
+            }
+        }
 
         //System.out.println("Quantidade de alunos: " + alunos.size());
     }

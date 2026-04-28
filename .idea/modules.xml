@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Aula-13-04/Aula-13-04.iml" filepath="$PROJECT_DIR$/Aula-13-04/Aula-13-04.iml" />
       <module fileurl="file://$PROJECT_DIR$/Aula-17-04/Aula-17-04.iml" filepath="$PROJECT_DIR$/Aula-17-04/Aula-17-04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/Encapsulamento/Encapsulamento.iml" filepath="$PROJECT_DIR$/POO/Encapsulamento/Encapsulamento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/Herenca/Hernca.iml" filepath="$PROJECT_DIR$/POO/Herenca/Hernca.iml" />
       <module fileurl="file://$PROJECT_DIR$/POO/POO.iml" filepath="$PROJECT_DIR$/POO/POO.iml" />
       <module fileurl="file://$PROJECT_DIR$/Revisao-Java01/Revisao-Java01.iml" filepath="$PROJECT_DIR$/Revisao-Java01/Revisao-Java01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Teste.iml" filepath="$PROJECT_DIR$/Teste.iml" />
