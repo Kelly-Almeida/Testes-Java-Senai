@@ -1,6 +1,6 @@
 public class Arena {
     public static void main(String[] args){
-        Personagem[] herois{
+        Personagem[] herois = new Personagem[0] {
             new Guerreiro("Conan");
             new Mago("Gandalf");
             new Arqueiro("Legolas");

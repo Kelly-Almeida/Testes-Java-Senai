@@ -37,7 +37,14 @@ public class LojaOnline {
 
             while (meuPedido.getStatus() == StatusPagamento.PENDENTE){
                 System.out.println("Aguarde, consultando status...");
+                Thread.sleep(2000);
+
+                StatusPagamento statusAtual = processador.verificarstatus(trasacaoId);
+                meuPedido.setStatus(statusAtual);
             }
+
+            System.out.println("\n--- Resultado Final ---");
+            System.out.println("Status do Pedido " + meuPedido.getId() + ": " + meu);
         }
     }
 
