@@ -9,14 +9,15 @@ public abstract class Veiculo {
     }
 
     public abstract void buzina();
-    public String setApelido(){
+    public String getApelido(){
         return this.apelido;
     }
 
-    public String setModelo(){
+    public String getModelo(){
         return this.modelo;
     }
-    public float setVelMax(){
+    public float getVelMax(){
         return this.velMax;
     }
+
 }

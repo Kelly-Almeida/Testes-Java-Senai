@@ -6,7 +6,7 @@ public class Garagem {
     private String nome;
     List <Veiculo> veiculos = new ArrayList<>();
 
-    public Garagem(String nome, float tamanho){
+    public Garagem(String nome){
         this.nome = nome;
 
     }
