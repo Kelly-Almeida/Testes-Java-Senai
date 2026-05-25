@@ -18,6 +18,10 @@ public class Arena {
 
             for (Personagem heroi : herois){
                 if ((monstro.estaVivo)){
+
+
+
+
                     heroi.usarHabilidade(monstro);
                     System.out.println("-----------------------------------------");
                 }
