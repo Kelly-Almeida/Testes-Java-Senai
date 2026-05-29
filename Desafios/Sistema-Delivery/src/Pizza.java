@@ -2,25 +2,27 @@ public class Pizza extends Produto{
     private String nome;
     private float valor;
     private String sabor;
-    private int tam;
+    private char tam;
 
-    public Pizza(String nome, float valor, String sabor, int tam){
-        super(nome);
+    public Pizza(String sabor, char tam){
         this.valor = 15;
         this.sabor = sabor;
+        this.nome = "Pizza de " + getSabor();
         this.tam = tam;
 
         if (sabor.equalsIgnoreCase("Marguerita")){
             this.valor += 20;
         }else if (sabor.equalsIgnoreCase("Calabresa")){
             this.valor += 25;
-        }else{
+        }else if(sabor.equalsIgnoreCase("Portuguesa")){
             this.valor += 30;
+        }else {
+            this.valor += 10;
         }
 
-        if(tam == 3){
+        if(tam == 'G'){
             this.valor *= 3;
-        }else if(tam == 2){
+        }else if(tam == 'M'){
             this.valor *= 2;
         }
     }

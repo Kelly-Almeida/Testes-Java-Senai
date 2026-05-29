@@ -1,11 +1,7 @@
-public class Produto {
-    private String nome;
+public abstract class Produto {
+    private String nome = null;
     private float valor = 0;
 
-    public Produto (String nome){
-        this.nome = nome;
-
-    }
 
     public String getNome(){
         return this.nome;

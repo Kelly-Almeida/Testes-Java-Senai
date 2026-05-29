@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class PrincipalDelivery {
     public static void main(String[] args){
@@ -6,6 +7,8 @@ public class PrincipalDelivery {
         int op, idPedido = 0;
         Pedido ped = new Pedido(idPedido);
         String bancoCaipirinhas[] = new String[]{"Morango", "Limão", "Maracujá"};
+        String bancoPizzas[] = new String[]{"Marguerita", "Calabresa", "Portuguesa", "Personalizada"};
+        char[] bancoTamanhos = new char[] {'P', 'M', 'G'};
 
         do{
             System.out.println("========== Sistema Delivery  =========");
@@ -42,27 +45,41 @@ public class PrincipalDelivery {
 
                         scan.nextLine();
 
-                        Produto prod =null;
+                        Produto prod = null;
                         switch (resp1){
                             case 1:
+                                int j1 = 1;
                                 System.out.println("Escolha um sabor: ");
-                                for (sabor :
-                                     for (String bancoCaipirinha : bancoCaipirinhas) {
-
-                                     }
-                                ){
-
+                                for (String sabor : bancoPizzas){
+                                    System.out.printf(j1 +" " + sabor);
                                 }
-                                prod = new Produto("Pizza", 50);
+                                String saborEscol = scan.nextLine();
+
+                                System.out.println("Digite um dos números abaixo para selecionar o sabor da pizza: ");
+                                for(char tamanho: bancoTamanhos){
+                                    System.out.println(j1 + " " + tamanho);
+                                }
+                                char tamanhoEscol = scan.next().charAt(0);
+
+                                prod = new Pizza(saborEscol, tamanhoEscol);
+
                                 ped.addItem(prod);
                                 System.out.println("Pizza adicionada!!");
 
                                 break;
                             case 2:
-                                System.out.println("Caipirinha adicionada!!");
-                                prod = new Produto("Caipirinha", 20);
+                                int j2 = 1;
+                                System.out.println("Escolha um sabor: ");
+                                for (String sabor : bancoCaipirinhas){
+                                    System.out.printf(j2 +" " + sabor);
+                                }
+
+                                String saborEscol2 = scan.nextLine();
+                                prod = new Caipirinha(saborEscol2);
                                 ped.addItem(prod);
+                                System.out.println("Caipirinha adicionada!!");
                                 break;
+
                             case 3:
                                 System.out.println("Cerveja adicionada!!");
                                 prod = new Produto("Cerveja", 15);

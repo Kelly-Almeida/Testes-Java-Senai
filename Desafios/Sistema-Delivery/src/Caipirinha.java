@@ -3,10 +3,10 @@ public class Caipirinha extends Produto {
     private float valor;
     private String sabor;
 
-    public Caipirinha(String nome, float valor, String sabor){
-        super(nome);
+    public Caipirinha(String sabor){
         this.valor = 10;
         this.sabor = sabor;
+        this.nome = "Caipirinha " + getSabor();
 
         if (sabor.equalsIgnoreCase("Limão")){
             this.valor += 10;
