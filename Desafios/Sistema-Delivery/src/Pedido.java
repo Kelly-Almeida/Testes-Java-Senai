@@ -15,8 +15,8 @@ public class Pedido {
 
     public void getItens(){
 
-        if(this.pedido == null) {
-            int i = 0;
+        if(this.pedido != null) {
+            int i = 1;
             for (Produto produto : this.pedido) {
                 System.out.println(i + " " + produto.getNome() + " " + produto.getValor());
             }
