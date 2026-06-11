@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class Escola {
     private List <Aluno> alunos;
+    private List <Turma> tumas;
+
     private String nome;
 
     public Escola(String nome){

@@ -108,6 +108,7 @@ public class Principal {
         System.out.print("Digite a turma: ");
         char turma = scan.next().charAt(0);
 
+
         System.out.println("Digite as notas do aluno");
         List <Float> notas = new ArrayList<>();
         for  (int i = 0; i < 4; i++){
